@@ -5,7 +5,7 @@ import org.json.JSONObject;
 public class RegisterClient {
     public static void main(String[] args) {
         // URL ของ PHP script ที่ทำการสมัครสมาชิก
-        String urlString = "http://localhost/Wise-Wallet/php/register.php"; // ปรับ URL ให้ตรงกับ path ที่คุณเก็บ PHP ไว้
+        String urlString = "http://localhost/Wise-Wallet/php/register.php"; 
 
         // ข้อมูลที่จะส่ง (email, username, password, created_at)
         String email = "test@example.com";
