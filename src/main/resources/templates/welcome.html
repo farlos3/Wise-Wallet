@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome</title>
-</head>
-<body>
-    <h1>Welcome to the App!</h1>
-    <a href="/logout">Logout</a>
-</body>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-xl shadow-md w-96 text-center">
+      <h1 class="text-4xl font-bold mb-6 text-gray-800">Welcome!</h1>
+      <p class="text-gray-600 mb-8">
+        You have successfully logged in to the application.
+      </p>
+      <a
+        href="/logout"
+        class="inline-block bg-red-500 text-white px-6 py-2 rounded-md hover:bg-red-600 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
+      >
+        Logout
+      </a>
+    </div>
+  </body>
 </html>
