@@ -7,7 +7,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-// import org.springframework.security.web.csrf.CsrfAuthenticationStrategy;
 
 import com.codeWithRaman.implementation.service.CustomUserDetails;
 
@@ -24,10 +23,18 @@ public class SecurityConfig {
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http.csrf(csrf -> csrf.disable())
-				.authorizeHttpRequests(request -> request.requestMatchers("/register", "/login").permitAll()
+				.authorizeHttpRequests(request -> request
+						.requestMatchers("/register", "/login", "/static/WebGLBuilds/**", "/WebGLBuilds/**").permitAll()
 						.anyRequest().authenticated())
-				.formLogin(form -> form.loginPage("/login").loginProcessingUrl("/login").defaultSuccessUrl("/welcome", true).permitAll())
-				.logout(logout -> logout.logoutSuccessUrl("/login").permitAll()).userDetailsService(customUserDetails);
+				.formLogin(form -> form
+						.loginPage("/login")
+						.loginProcessingUrl("/login")
+						.defaultSuccessUrl("/game", true)
+						.permitAll())
+				.logout(logout -> logout
+						.logoutSuccessUrl("/login")
+						.permitAll())
+				.userDetailsService(customUserDetails);
 		return http.build();
 	}
 

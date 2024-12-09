@@ -2,6 +2,7 @@ package com.codeWithRaman.implementation.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,12 +25,12 @@ public class AuthController {
 			@RequestParam String password,
 			@RequestParam String confirmPassword,
 			@RequestParam String email,
-			org.springframework.ui.Model model) { // เพิ่ม email
+			Model model) {
 		if (!password.equals(confirmPassword)) {
 			model.addAttribute("errorMessage", "Passwords do not match.");
-			return "redirect:/register?error=passwordMismatch";
+			return "register"; // ใช้ Model แทนการ redirect
 		}
-		userService.registerUser(username, password, email); // ส่ง email ไปยัง service
+		userService.registerUser(username, password, email);
 		return "redirect:/login";
 	}
 
@@ -41,5 +42,10 @@ public class AuthController {
 	@GetMapping("/welcome")
 	public String welcome() {
 		return "welcome";
+	}
+
+	@GetMapping("/game")
+	public String game() {
+		return "redirect:/WebGLBuilds/index.html"; // Redirect ไปยังไฟล์ใน static
 	}
 }
