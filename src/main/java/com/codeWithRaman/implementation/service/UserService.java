@@ -19,23 +19,30 @@ public class UserService {
 		this.userRepository = userRepository;
 	}
 
-	public User getUserByEmail(String email) {
-		return userRepository.findByEmail(email);
+	public User getUserByEmail(String username) {
+		// return userRepository.findByEmail(email);
+		return userRepository.findByUsername(username);
 	}
 
-	public void registerUser(String username, String password, String email) { // เพิ่ม email เป็นพารามิเตอร์
+	public void registerUser(String username, String password, String email) {
 		User user = new User();
 		user.setUsername(username);
-		user.setPassword(passwordEncoder.encode(password)); // เข้ารหัส password
-		user.setEmail(email); // ตั้งค่า email
-		user.setRole("USER"); // ตั้งค่า role เป็น USER
-		userRepository.save(user); // บันทึก user ลงฐานข้อมูล
+		user.setPassword(passwordEncoder.encode(password));
+		user.setEmail(email);
+		user.setQuota(3); 
+		user.setTotalBalance(0); 
+		user.setTotalExpenses(0); 
+		user.setRole("USER"); 
+		userRepository.save(user); 
 
-		// พิมพ์ข้อมูลทั้งหมดของ user
 		System.out.println("\nUser created:");
 		System.out.println("Username: " + user.getUsername());
 		System.out.println("Email: " + user.getEmail());
 		System.out.println("Role: " + user.getRole());
-		System.out.println("Created at: " + user.getCreated_at());
+		System.out.println("Quota: " + user.getQuota());
+		System.out.println("Total Balance: " + user.getTotalBalance());
+		System.out.println("Total Expenses: " + user.getTotalExpenses());
+		System.out.println("Created at: " + user.getCreated_at() + "\n");
 	}
+
 }

@@ -21,9 +21,8 @@ public class CustomUserDetails implements UserDetailsService{
 		// TODO Auto-generated method stub
 		User user = userRepository.findByUsername(username);
 		if(user == null) {
-			throw new UsernameNotFoundException("user not found with givn username");
+			throw new UsernameNotFoundException("User not found with givn username");
 		}
 		return org.springframework.security.core.userdetails.User.withUsername(user.getUsername()).password(user.getPassword()).roles(user.getRole()).build();
 	}
-
 }
