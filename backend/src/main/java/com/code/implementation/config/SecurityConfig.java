@@ -1,4 +1,4 @@
-package com.codeWithRaman.implementation.config;
+package com.code.implementation.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,7 +8,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
-import com.codeWithRaman.implementation.service.CustomUserDetails;
+import com.code.implementation.service.CustomUserDetails;
 
 @Configuration
 @EnableWebSecurity

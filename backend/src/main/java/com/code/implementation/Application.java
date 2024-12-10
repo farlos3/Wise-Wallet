@@ -1,4 +1,4 @@
-package com.codeWithRaman.implementation;
+package com.code.implementation;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -8,13 +8,13 @@ import org.springframework.beans.factory.annotation.Value;
 // import org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext;
 
 @SpringBootApplication
-public class RegisterAndLoginWithSecurityApplication implements CommandLineRunner {
+public class Application implements CommandLineRunner {
 
     @Value("${server.port}")
     private int serverPort; // รับค่าพอร์ตจาก application.properties
 
     public static void main(String[] args) {
-        SpringApplication.run(RegisterAndLoginWithSecurityApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
     @Override

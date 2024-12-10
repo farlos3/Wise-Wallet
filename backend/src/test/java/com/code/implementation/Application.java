@@ -1,10 +1,10 @@
-package com.codeWithRaman.implementation;
+package com.code.implementation;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RegisterAndLoginWithSecurityApplicationTests {
+class Application {
 
 	@Test
 	void contextLoads() {

@@ -1,11 +1,11 @@
-package com.codeWithRaman.implementation.service;
+package com.code.implementation.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.codeWithRaman.implementation.model.User;
-import com.codeWithRaman.implementation.repository.UserRepository;
+import com.code.implementation.model.User;
+import com.code.implementation.repository.UserRepository;
 
 @Service
 public class UserService {

@@ -1,9 +1,9 @@
-package com.codeWithRaman.implementation.repository;
+package com.code.implementation.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.codeWithRaman.implementation.model.User;
+import com.code.implementation.model.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {

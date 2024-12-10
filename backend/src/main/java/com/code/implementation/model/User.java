@@ -1,4 +1,4 @@
-package com.codeWithRaman.implementation.model;
+package com.code.implementation.model;
 
 import java.time.LocalDateTime;
 
