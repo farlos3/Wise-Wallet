@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 public class Application implements CommandLineRunner {
 
     @Value("${server.port}")
-    private int serverPort; // รับค่าพอร์ตจาก application.properties
+    private int serverPort;
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);

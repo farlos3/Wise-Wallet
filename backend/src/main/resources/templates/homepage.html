@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background Image</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            backgroundImage: {
+              "custom-bg": "url('/bg-wise-wallet.png')",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="h-screen bg-custom-bg bg-cover bg-center m-0 relative"
+    onclick="navigateToNextPage()"
+  >
+    <div
+      class="absolute inset-0 bg-black bg-opacity-5 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center cursor-pointer"
+    >
+      <h1
+        class="text-white text-3xl md:text-4xl lg:text-5xl text-center font-bold drop-shadow-[0_4px_6px_rgba(0,0,0,0.7)] transform transition-transform duration-300 hover:scale-105"
+      >
+        Tap to start
+      </h1>
+    </div>
+
+    <script>
+      function navigateToNextPage() {
+        window.location.href = "/login";
+      }
+    </script>
+  </body>
+</html>

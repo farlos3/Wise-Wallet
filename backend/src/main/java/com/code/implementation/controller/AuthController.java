@@ -54,9 +54,14 @@ public class AuthController {
         }
     }
 
+    @GetMapping("/")
+    public String home() {
+        return "homepage";
+    }
+
     // @GetMapping("/welcome")
     // public String welcome() {
-    //     return "welcome";
+    // return "welcome";
     // }
 
     @GetMapping("/game")

@@ -24,7 +24,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(request -> request
-                        .requestMatchers("/static/WebGLBuilds/**", "/WebGLBuilds/**", "/register").permitAll() 
+                        .requestMatchers("/", "/static/**", "/bg-wise-wallet.png", "/register").permitAll()
                         .anyRequest().authenticated())
                 .formLogin(form -> form
                         .loginPage("/login")
@@ -33,8 +33,7 @@ public class SecurityConfig {
                         .permitAll())
                 .logout(logout -> logout
                         .logoutSuccessUrl("/login")
-                        .permitAll())
-                .userDetailsService(customUserDetails);
+                        .permitAll());
 
         return http.build();
     }
