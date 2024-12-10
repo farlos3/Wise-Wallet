@@ -10,8 +10,8 @@ import java.nio.file.Paths;
 
 public class LocalServer {
     public static void main(String[] args) throws IOException {
-        int port = 8080; // พอร์ตที่ต้องการใช้งาน
-        String rootDir = "WebGLBuilds"; // ชื่อโฟลเดอร์ที่เก็บไฟล์ WebGL
+        int port = 8080;
+        String rootDir = "WebGLBuilds";
 
         HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
 
@@ -29,12 +29,11 @@ public class LocalServer {
                 if (Files.exists(path) && !Files.isDirectory(path)) {
                     byte[] response = Files.readAllBytes(path);
 
-                    // กำหนด MIME type
                     String mimeType = Files.probeContentType(path);
                     if (mimeType == null) mimeType = "application/octet-stream";
                     exchange.getResponseHeaders().set("Content-Type", mimeType);
 
-                    // กำหนด Content-Encoding สำหรับไฟล์ .br
+                    // Content-Encoding สำหรับไฟล์ .br
                     if (filePath.endsWith(".br")) {
                         exchange.getResponseHeaders().set("Content-Encoding", "br");
                     }
@@ -44,7 +43,6 @@ public class LocalServer {
                     os.write(response);
                     os.close();
                 } else {
-                    // แสดงข้อความ 404 หากไม่พบไฟล์
                     String notFound = "404 Not Found: " + requestPath;
                     exchange.sendResponseHeaders(404, notFound.length());
                     OutputStream os = exchange.getResponseBody();
