@@ -29,7 +29,7 @@ public class SecurityConfig {
                 .formLogin(form -> form
                         .loginPage("/login")
                         .loginProcessingUrl("/login")
-                        .defaultSuccessUrl("http://localhost:8080", true) // Redirect ไปยัง WebGL Server
+                        .defaultSuccessUrl("http://localhost:8080", true)
                         .permitAll())
                 .logout(logout -> logout
                         .logoutSuccessUrl("/login")

@@ -29,10 +29,10 @@ public class AuthController {
             Model model) {
         if (!password.equals(confirmPassword)) {
             model.addAttribute("errorMessage", "Passwords do not match.");
-            return "register"; // แสดงข้อความในหน้า register
+            return "register";
         }
         userService.registerUser(username, password, email);
-        return "redirect:/login"; // ไปหน้า login
+        return "redirect:/login";
     }
 
     @GetMapping("/login")
@@ -47,21 +47,20 @@ public class AuthController {
             Model model) {
         boolean isAuthenticated = userService.authenticate(username, password);
         if (isAuthenticated) {
-            return "redirect:/game"; // Redirect ไปที่หน้าของเกม
+            return "redirect:/game";
         } else {
             model.addAttribute("errorMessage", "Invalid username or password.");
             return "login";
         }
     }
 
-    @GetMapping("/welcome")
-    public String welcome() {
-        return "welcome";
-    }
+    // @GetMapping("/welcome")
+    // public String welcome() {
+    //     return "welcome";
+    // }
 
     @GetMapping("/game")
     public String game() {
-        // Redirect ไปยัง WebGL Server
         return "redirect:http://localhost:8080";
     }
 }

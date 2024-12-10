@@ -41,12 +41,10 @@ public class UserService {
     }
 
     public boolean authenticate(String username, String password) {
-        // ค้นหา User จากฐานข้อมูล
         User user = userRepository.findByUsername(username);
         if (user != null) {
-            // ตรวจสอบ Password
             return passwordEncoder.matches(password, user.getPassword());
         }
-        return false; // หากไม่พบ User หรือ Password ไม่ตรง
+        return false;
     }
 }
