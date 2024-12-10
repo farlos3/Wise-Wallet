@@ -58,8 +58,9 @@ public class LocalServer {
                 os.close();
             }
         });
-
-        System.out.println("Server started at http://localhost:" + port);
+        
+        System.out.println("Backend Server started at http://localhost:8081");
+        System.out.println("WebGL Server started at http://localhost:" + port);
         server.start();
     }
 }
