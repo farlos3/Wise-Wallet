@@ -26,7 +26,7 @@
 
 ## Database Access (phpMyAdmin)
     - Local URL: http://localhost/phpmyadmin/
-    - Default Username: ```root```
+    - Default Username: root
     - Default Password: (typically blank)
 
 ## Database Configuration
