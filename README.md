@@ -39,4 +39,3 @@
     - Ensure XAMPP is running and phpMyAdmin is accessible 
     - Replace your_database with your actual database name
     - Replace your_password with your MySQL password
-<img src="[https://link-ภาพ-ที่คัดลอกมา.jpg](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi63bB21bjAXLI7eIkXGD182xzfN9T3HsJxl2nP1lrUMo8bNfBaNUCB9MvIFUprTh6Ck9qSvLjW2hL3_M3JNNZ8UR7E01msaNadkG_eZ_Dm6korplZdVwF5wutME5oRDQ5Aq5IA-2q4vck/s1600/spring-boot.png)" width="400">
